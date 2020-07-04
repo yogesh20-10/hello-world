@@ -3,6 +3,7 @@ pipeline {
    
    enviornment{
         PATH="/opt/maven/apache-maven-3.6.3/bin:$PATH"
+        }
    stages {
       stage('Git checkout') {
          steps {
@@ -12,6 +13,7 @@ pipeline {
       stage("maven Build") {
          steps {
             sh "mvn clean package"
+            }
      }
    }
 }
