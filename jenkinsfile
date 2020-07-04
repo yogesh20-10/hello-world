@@ -1,10 +1,10 @@
-pipeline {
-   agent any
-   
-   enviornment{
-        PATH="/opt/maven/apache-maven-3.6.3/bin:$PATH"
-   }
-   stages{
+pipeline{
+    agent any
+    
+    environment{
+        PATH = "/opt/maven/apache-maven-3.6.3/bin:$PATH"
+    }
+    stages{
       stage('Git checkout'){
          steps{
             git credentialsId: '9507d743-9fd7-4075-b118-7b5d0f74b55b', url: 'https://github.com/yogesh20-10/hello-world.git'
