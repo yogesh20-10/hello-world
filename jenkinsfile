@@ -18,7 +18,7 @@ pipeline{
      }
      stage("deploy-dev"){
          steps{
-            sshagent(['tomcat']) {
+            sshagent(['tomcat']){
             sh """
                 scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/declarative_pipeline/webapp/target/webapp1.war 172.31.109.5:/opt/apache-tomcat-8.5.56/webapps/'
                 ssh cloud_user@172.31.109.5 /opt/apache-tomcat-8.5.56/bin/shutdown.sh
